@@ -8,8 +8,11 @@ import java.util.List;
 @RestController
 public class DogController {
 
-    @Autowired
     DogRepository repository;
+
+    public DogController(DogRepository repository) {
+        this.repository = repository;
+    }
 
     @GetMapping("/dog")
     public List<Dog> dogs() {
